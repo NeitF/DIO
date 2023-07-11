@@ -4,6 +4,8 @@ menu = """
 [s] Sacar
 [e] Extrato
 [u] Criar usuário
+[c] Criar conta corrente
+[l] Listar contas
 [q] Sair
 
 =>
@@ -15,7 +17,9 @@ limite = 500
 numero_saques = 0
 LIMITE_SAQUES = 3
 extrato = ""
+dados = []
 usuarios = []
+contas_corrente = []
 
 #MÉTODOS
 def sacar(*, saque, saldo, extrato, limite, numero_saques):
@@ -50,16 +54,42 @@ def exibir_extrato(saldo, /, *, extrato):
    print(extrato + f"\nSaldo: R${saldo:.2f}\n" + '='*20)
 
 
-def criar_usuario(nome, nasc, cpf, endereco, usuarios):
- pass
- 
+def criar_usuario(dados, usuarios):
+ if not dados[2].isdecimal():
+    print('O CPF deve conter apenas números')
+    dados.clear()
+    return 0
+ for u in usuarios:
+   if u[2] == dados[2]:
+     print('O CPF já foi cadastrado por outro usuário')
+     dados.clear()
+     return 0
+     
+ usuarios.append(dados.copy())
+ dados.clear()
 
-def criar_conta():
-  pass
+  
+def criar_conta_corrente(cpf, usuarios, contas):
+  for u in usuarios:
+    if u[2] == cpf:
+      nro = len(contas) + 1
+      contas.append(["0001", nro, cpf])
+      return 1
+
+  print('O CPF informado não foi encontrado')
 
 
-def listar_contas():
-  pass
+def listar_contas(usuarios, contas):
+  for u in usuarios:
+    print(f"======{u[0]}======")
+    print(f"Data de nascimento: {u[1]}")
+    print(f"CPF: {u[2]}")
+    print(f"Endereço:  {u[3]}, {u[4]}, {u[5]}, {u[6]}, {u[7]}")
+    for c in contas:
+      if c[2] == u[2]:
+        print(f"Agência: {c[0]}")
+        print(f"Conta: {c[1]}")
+    print("="*14)
 
 
 # INÍCIO
@@ -82,17 +112,26 @@ while True:
     exibir_extrato(saldo, extrato=extrato)
 
   elif opcao == "u":
-    nome = input('Nome: ')
-    nasc = input('Data de nascimento: ')
-    cpf = input('CPF: ')
-    logradouro = input('Logradouro: ')
-    numero = input('Número: ')
-    bairro = input('Bairro: ')
-    cidade = input('Cidade: ')
-    estado = input('Estado')
-    
+    dados.append(input('Nome: '))
+    dados.append(input('Data de nascimento: '))
+    dados.append(input('CPF: '))
+    dados.append(input('Logradouro: '))
+    dados.append(input('Número: '))
+    dados.append(input('Bairro:  '))
+    dados.append(input('Cidade: '))
+    dados.append(input('Estado: '))
+    criar_usuario(dados, usuarios)
+
+  elif opcao == "c":
+    dado = input('CPF do usuário dono da conta: ')
+    criar_conta_corrente(dado, usuarios, contas_corrente)
+
+  elif opcao == "l":
+    listar_contas(usuarios, contas_corrente)
+  
   elif opcao == "q": 
     break
+    
   else:
     print("Operação inválida, por favor selecione novamente a operação desejada")
     
