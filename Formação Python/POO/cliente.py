@@ -29,7 +29,7 @@ class Cliente(ABC):
             
         
     def imprimir_extrato(self, Conta):
-        print(Conta, "\n")
+        print(f"Conta número: {Conta.numero}", "\n")
         for transacao in Conta.historico.historico_transacoes:
             print(transacao)
     

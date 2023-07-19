@@ -47,6 +47,10 @@ class Conta(ABC):
     @property
     def historico(self):
         return self._Historico 
+    
+    @property
+    def numero(self):
+        return self._numero
         
     @classmethod
     def nova_conta(cls, numero, Cliente):

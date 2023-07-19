@@ -3,7 +3,7 @@ class Historico:
         self._historicoTransacoes = []
     
     def adicionar_transacao(self, Transacao):
-       str = f"{Transacao.__class__.__name__} : {Transacao.valor}"
+       str = f"{Transacao.__class__.__name__} : R${Transacao.valor}"
        self._historicoTransacoes.append(str)
     
     @property
