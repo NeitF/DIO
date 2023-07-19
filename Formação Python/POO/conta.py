@@ -9,35 +9,44 @@ class Conta(ABC):
         self._numero = numero
         self._agencia = "0001"
         self._Cliente = Cliente
-        self._Historico = Historico
+        self._Historico = Historico()
     
     def sacar(self, valor):
         if valor < 0:
             msg = "Apenas valores positivos são permitidos"
             return False, msg
-        elif (self._valor - valor) < 0:
+        elif (self._saldo - valor) < 0:
             msg = "Saldo insuficiente"
             return False, msg
         else:
             msg = "Saque realizado com sucesso"
+            self._saldo -= valor
             return True, msg
         
     def depositar(self, valor):
         if  valor < 0:
-            msg = "Apenas valores positivas são permitidos"
-            return False
+            msg = "Apenas valores positivos são permitidos"
+            return False, msg
         else:
             self._saldo += valor
             msg = "Depositado com sucesso!"
-            return True
+            return True, msg
         
     def __str__(self):
-        return f""" Saldo: {self._saldo}
-                    """
+        return f""" 
+        Saldo: {self._saldo}
+        Número da conta: {self._numero}
+        Agência: {self._agencia}
+        Cliente: {self._Cliente.nome}
+        """
         
     @property
     def saldo(self):
         return self._saldo or 0
+    
+    @property
+    def historico(self):
+        return self._Historico 
         
     @classmethod
     def nova_conta(cls, numero, Cliente):
