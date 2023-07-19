@@ -13,19 +13,26 @@ class Cliente(ABC):
     def listarContas(self):
         for e, c in enumerate(self._contas):
             print(f" CONTA {(e)} ".center(50, "="), f"\n {c}")
-            print(c.saldo)
             
     def realizar_transacao(self, Conta, Transacao):
         if isinstance(Transacao, Saque):
             result, msg = Conta.sacar(Transacao.valor)
         else:
             result, msg = Conta.depositar(Transacao.valor)
-            
+
+        Transacao.registrar(Conta)
+        
         if result:
             print(msg)
         else:
             print("ERRO\n", msg)
             
+        
+    def imprimir_extrato(self, Conta):
+        print(Conta, "\n")
+        for transacao in Conta.historico.historico_transacoes:
+            print(transacao)
+    
     @property
     def contas(self):
         return self._contas 

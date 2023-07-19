@@ -13,7 +13,7 @@ menu = """
 =>
 """
 
-num = 1
+num = 0
 pessoa = PessoaFisica("Campinas", "555.222.111-00", "Josias", "25/05/1990")
 
 while True:
@@ -30,7 +30,9 @@ while True:
     conta = pessoa.contas[num_conta]
     pessoa.realizar_transacao(conta, Saque(valor))
   elif opcao == "e":
-    pass
+    num_conta = int(input('Digite o número da conta que deseja obter o extrato: '))
+    conta = pessoa.contas[num_conta]
+    pessoa.imprimir_extrato(conta)
   elif opcao == "c":
     pessoa.abrir_conta(num, pessoa)
     num += 1
@@ -41,4 +43,5 @@ while True:
     
   else:
     print("Operação inválida, por favor selecione novamente a operação desejada")
+    
     

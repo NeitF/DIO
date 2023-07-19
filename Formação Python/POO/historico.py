@@ -1,7 +1,11 @@
 class Historico:
     def __init__(self):
         self._historicoTransacoes = []
-        self.texto = "tretrte"
     
-    def a(self):
-        print(self.texto)
+    def adicionar_transacao(self, Transacao):
+       str = f"{Transacao.__class__.__name__} : {Transacao.valor}"
+       self._historicoTransacoes.append(str)
+    
+    @property
+    def historico_transacoes(self):
+        return self._historicoTransacoes

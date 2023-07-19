@@ -11,7 +11,8 @@ class Deposito:
         self._valor = valor
     
     def registrar(self, Conta):
-        print(Conta.historico.a())
+        # dep = f"Depósito: {self._valor}"
+        Conta.historico.adicionar_transacao(self)
         
     @property
     def valor(self):
@@ -23,7 +24,8 @@ class Saque:
         self._valor = valor
         
     def registrar(self, Conta):
-        pass
+        # saq = f"Saque: {self._valor}"
+        Conta.historico.adicionar_transacao(self)
     
     @property
     def valor(self):
