@@ -21,14 +21,10 @@ while True:
   
   if opcao == "d":
     valor, num_conta = input('Digite o valor de depósito e o número da conta: ').split()
-    valor, num_conta = int(valor), int(num_conta)
-    conta = pessoa.contas[num_conta]
-    pessoa.realizar_transacao(conta, Deposito(valor))
+    pessoa.realizar_transacao(pessoa.contas[int(num_conta)], Deposito(int(valor)))
   elif opcao == "s":
     valor, num_conta = input('Digite o valor de saque e o número da conta: ').split()
-    valor, num_conta = int(valor), int(num_conta)
-    conta = pessoa.contas[num_conta]
-    pessoa.realizar_transacao(conta, Saque(valor))
+    pessoa.realizar_transacao(pessoa.contas[int(num_conta)], Deposito(int(valor)))
   elif opcao == "e":
     num_conta = int(input('Digite o número da conta que deseja obter o extrato: '))
     conta = pessoa.contas[num_conta]
