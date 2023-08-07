@@ -44,5 +44,12 @@ print(financial_info.primary_key)
 
 #Executando statement
 with engine.connect() as conn:
+    print('Executando um statement no Banco')
+    sqlInsert = text('insert into user (user_id, email_address, nickname) values (1, "email@email", "tien")')
+    conn.execute(sqlInsert)
     sql = text('select * from user')
     result = conn.execute(sql)
+    
+    #printando resultado
+    for row in result:
+        print(row)
