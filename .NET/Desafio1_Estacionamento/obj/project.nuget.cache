@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "btKEPexSIOeydUT5RM0ZIuueaaxR0dtFrXyGF2JhINY1mRzn7Q5YTVDiXgTCfgI0a5FiR1vQShH8agLx9yISZg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nathan.silva\\OneDrive - Becomex\\Documentos\\C# Aulas\\ConsoleApp1\\Desafio1_Estacionamento\\Desafio1_Estacionamento.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
