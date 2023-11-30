@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "bS4SVGEB3p8AW4WbJ9W5VcwXADeHDsdPlmKDBicefgkj65LFEBOySGIeQj9fl7DyBABfZzjykekFHGnhz1Ae0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nathan.silva\\OneDrive - Becomex\\Documentos\\C# Aulas\\ConsoleApp1\\Smartphone\\Smartphone.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\nathan.silva\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}
